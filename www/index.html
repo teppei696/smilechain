@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    </script>
+    <style>
+        .icon {
+            max-width: 75px;
+            height: auto;
+        }
+        .anime {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body onload="onLoad();" style="background-color: #00B9EF;">
+    <table style="width:100%;">
+        <tr>
+            <td colspan="4" style="height: 150px; text-align: center; font-size: 30pt; color: white;"><span id="name">Smile Chain</span></td>
+        </tr>
+        <tr>
+            <td colspan="4" style="height: 300px; text-align: center;"><img class="anime" src="img/anime.gif" id="face"></td>
+        </tr>
+        <tr>
+            <td><img class="icon" src="img/1btn.png" id="laught" onclick="selfLaught();" ></td>
+            <td><img class="icon" src="img/2btn.png" id="shop" onclick="sakuraIoOn();" ></td>
+            <td><img class="icon" src="img/3btn.png" id="collection" onclick="" ></td>
+            <td><img class="icon" src="img/4btn.png" id="setting" onclick="settingDialog();" ></td>
+        </tr>
+    </table>
+</body>
+</html>
