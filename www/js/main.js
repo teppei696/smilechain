@@ -8,6 +8,13 @@
     function onLoad() {
         console.log("===== onLoad start =====");
         document.addEventListener("deviceready", initialize, false);
+        var select = localStorage.getItem('select');
+        if (select) {
+            $("#face").attr('src', "img/album_0" + select + ".png");
+            var src = 'media/' + select + '.wav';
+            media = new Media (getPath() + src , onSuccess, onError);
+            media.play();
+        } 
     }
     function initialize() {
         if (timer == null) {
@@ -35,7 +42,6 @@
         }
     }
     function onSuccess() {
-        console.log("playAudio():Audio Success");
         finish();
         flg = true;
     }
@@ -51,19 +57,15 @@
     function getData() {
         var str = "";
         if (userid == "2") {
-            console.log("2");
             // laught_flg = 1 and id != 2 and flg2 = 0
             str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200';
         } else if (userid == "3") {
-            console.log("3");
             // laught_flg = 1 and id != 3 and flg3 = 0 and flg2 = 1';
             str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200%20and%20flg2%20%3D%201';
         } else if (userid == "4") {
-            console.log("4");
             // laught_flg = 1 and id != 4 and flg4 = 0 and flg3 = 1';
             str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200%20and%20flg3%20%3D%201';
         } else if (userid == "5") {
-            console.log("5");
             // laught_flg = 1 and id != 5 and flg5 = 0 and flg4 = 1';
             str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200%20and%20flg4%20%3D%201';
         }
@@ -88,13 +90,7 @@
     }
     function setUserData(json) {
         var len = json.records.length;
-        console.log(len);
         for(var i=0; i < len; i++){
-            console.log("all: " + JSON.stringify(json.records[i]));
-            console.log("id: " + json.records[i].id.value);
-            console.log("name: " + json.records[i].name.value);
-            console.log("laught_flg: " + json.records[i].laught_flg.value);
-            console.log("laught_datetime: " + json.records[i].laught_datetime.value);
             getId = json.records[i].id.value;
             updateData(json.records[i].id.value, json.records[i].name.value);
         }
@@ -235,6 +231,6 @@
     function setImg(){
         getData();
     }
-    function settingDialog(){
+    function settingDialog() {
         userid = window.prompt("input user id", userid);
     }
