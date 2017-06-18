@@ -59,6 +59,9 @@
         } else if (userid == "4") {
             // laught_flg = 1 and id != 4 and flg4 = 0 and flg3 = 1';
             str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200%20and%20flg3%20%3D%201';
+        } else if (userid == "5") {
+            // laught_flg = 1 and id != 5 and flg5 = 0 and flg4 = 1';
+            str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200%20and%20flg4%20%3D%201';
         }
         console.log(str);
         $.ajax({
@@ -147,11 +150,13 @@
     function selfLaught(){
         var str = "";
         if (userid == "2") {
-            str = '{"app": "12","id": "' + userid + '","record": {"laught_flg": {"value": "1"}, "flg1": {"value": "0"}, "flg2": {"value": "1"}, "flg3": {"value": "0"}, "flg4": {"value": "0"}}}';
+            str = '{"app": "12","id": "' + userid + '","record": {"laught_flg": {"value": "1"}, "flg1": {"value": "0"}, "flg2": {"value": "1"}, "flg3": {"value": "0"}, "flg4": {"value": "0"}, "flg5": {"value": "0"}}}';
         } else if (userid == "3") {
-            str = '{"app": "12","id": "' + userid + '","record": {"laught_flg": {"value": "1"}, "flg1": {"value": "0"}, "flg2": {"value": "0"}, "flg3": {"value": "1"}, "flg4": {"value": "0"}}}';
+            str = '{"app": "12","id": "' + userid + '","record": {"laught_flg": {"value": "1"}, "flg1": {"value": "0"}, "flg2": {"value": "0"}, "flg3": {"value": "1"}, "flg4": {"value": "0"}, "flg5": {"value": "0"}}}';
         } else if (userid == "4") {
-            str = '{"app": "12","id": "' + userid + '","record": {"laught_flg": {"value": "1"}, "flg1": {"value": "0"}, "flg2": {"value": "0"}, "flg3": {"value": "0"}, "flg4": {"value": "1"}}}';
+            str = '{"app": "12","id": "' + userid + '","record": {"laught_flg": {"value": "1"}, "flg1": {"value": "0"}, "flg2": {"value": "0"}, "flg3": {"value": "0"}, "flg4": {"value": "1"}, "flg5": {"value": "0"}}}';
+        } else if (userid == "5") {
+            str = '{"app": "12","id": "' + userid + '","record": {"laught_flg": {"value": "1"}, "flg1": {"value": "0"}, "flg2": {"value": "0"}, "flg3": {"value": "0"}, "flg4": {"value": "0"}, "flg5": {"value": "1"}}}';
         }
         $.ajax({
             type: 'PUT',
