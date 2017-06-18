@@ -3,3 +3,6 @@
         localStorage.setItem('select', int);
         location.href = "index.html";
     }
+    function settingDialog() {
+        userid = window.prompt("input user id", userid);
+    }

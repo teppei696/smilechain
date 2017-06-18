@@ -178,6 +178,7 @@
                 console.log("errorThrown : " + errorThrown);
             }
         });
+        sakuraIoOn();
     };
     function sakuraIoOn(){
         console.log("===sakura.io on===");
@@ -228,7 +229,7 @@
             }
         });
     };
-    function setImg(){
+    function setImg() {
         getData();
     }
     function settingDialog() {
