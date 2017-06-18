@@ -107,6 +107,7 @@
             success: function(json) {
                 $("#face").attr('src', "img/" + id + ".jpg");
                 $("#name").text(name);
+                $("#logo").attr('src', "");
                 playAudio(id);
             },
             error : function(XMLHttpRequest, textStatus, errorThrown) {
@@ -131,7 +132,8 @@
             dataType: 'json',
             success: function(json) {
                 $("#face").attr('src', "img/anime.gif");
-                $("#name").text("Smile Chain");
+                $("#name").text("");
+                $("#logo").attr('src', "img/logo.png");
             },
             error : function(XMLHttpRequest, textStatus, errorThrown) {
                 console.log("===== ajax失敗 put =====");
