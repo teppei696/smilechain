@@ -51,19 +51,23 @@
     function getData() {
         var str = "";
         if (userid == "2") {
+            console.log("2");
             // laught_flg = 1 and id != 2 and flg2 = 0
             str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200';
         } else if (userid == "3") {
+            console.log("3");
             // laught_flg = 1 and id != 3 and flg3 = 0 and flg2 = 1';
             str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200%20and%20flg2%20%3D%201';
         } else if (userid == "4") {
+            console.log("4");
             // laught_flg = 1 and id != 4 and flg4 = 0 and flg3 = 1';
             str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200%20and%20flg3%20%3D%201';
         } else if (userid == "5") {
+            console.log("5");
             // laught_flg = 1 and id != 5 and flg5 = 0 and flg4 = 1';
             str = 'https://oas7b.cybozu.com/k/v1/records.json?app=12&query=laught_flg%20%3D%201%20and%20id%20%21%3D%20' + userid + '%20and%20flg' + userid + '%20%3D%200%20and%20flg4%20%3D%201';
         }
-        console.log(str);
+        //console.log(str);
         $.ajax({
             type: 'GET',
             url: str,
